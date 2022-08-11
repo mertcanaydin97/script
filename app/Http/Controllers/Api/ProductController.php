@@ -154,7 +154,7 @@ class ProductController extends ApiBaseController
             $productDetails = $product->details;
             $tax = Tax::find($productDetails->tax_id);
 
-            if ($orderType == 'purchases' || $orderType == 'quotations' || ($orderType == 'sales' && $productDetails->current_stock > 0) || ($orderType == 'sales-returns') || ($orderType == 'purchase-returns' && $productDetails->current_stock > 0) || ($orderType == 'stock-transfers' && $productDetails->current_stock > 0)) {
+            if ($orderType == 'purchases' || $orderType == 'quotations' || ($orderType == 'sales') || ($orderType == 'sales-returns') || ($orderType == 'purchase-returns') || ($orderType == 'stock-transfers')) {
                 $stockQuantity = $productDetails->current_stock;
                 $unit = $product->unit_id != null ? Unit::find($product->unit_id) : null;
 
@@ -262,7 +262,7 @@ class ProductController extends ApiBaseController
             $productDetails = $product->details;
             $tax = Tax::find($productDetails->tax_id);
 
-            if ($orderType == 'purchases' || $orderType == 'quotations' || ($orderType == 'sales' && $productDetails->current_stock > 0) || ($orderType == 'sales-returns') || ($orderType == 'purchase-returns' && $productDetails->current_stock > 0) || ($orderType == 'stock-transfers' && $productDetails->current_stock > 0)) {
+            if ($orderType == 'purchases' || $orderType == 'quotations' || ($orderType == 'sales') || ($orderType == 'sales-returns') || ($orderType == 'purchase-returns') || ($orderType == 'stock-transfers')) {
                 $stockQuantity = $productDetails->current_stock;
                 $unit = $product->unit_id != null ? Unit::find($product->unit_id) : null;
 
