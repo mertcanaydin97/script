@@ -10,25 +10,25 @@
    */
 
 /*!
-  * devtools-if v9.2.0-beta.36
+  * devtools-if v9.2.2
   * (c) 2022 kazuya kawaguchi
   * Released under the MIT License.
   */
 
 /*!
-  * message-compiler v9.2.0-beta.36
+  * message-compiler v9.2.2
   * (c) 2022 kazuya kawaguchi
   * Released under the MIT License.
   */
 
 /*!
-  * shared v9.2.0-beta.36
+  * shared v9.2.2
   * (c) 2022 kazuya kawaguchi
   * Released under the MIT License.
   */
 
 /*!
-  * vue-router v4.0.16
+  * vue-router v4.1.3
   * (c) 2022 Eduardo San Martin Morote
   * @license MIT
   */
@@ -51,7 +51,7 @@
  */
 
 /*!
- * Chart.js v3.8.0
+ * Chart.js v3.9.1
  * https://www.chartjs.org
  * (c) 2022 Chart.js Contributors
  * Released under the MIT License

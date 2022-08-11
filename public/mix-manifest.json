@@ -1,6 +1,6 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/pos_invoice_css.css": "/css/pos_invoice_css.css",
-    "/css/app.css": "/css/app.css",
-    "/css/antd.css": "/css/antd.css"
+    "/js/app.js": "/js/app.js?id=b0530d6b26e2091cdf8b39473183ec81",
+    "/css/pos_invoice_css.css": "/css/pos_invoice_css.css?id=d14a2a552be48ab6369ef4447b66f5d6",
+    "/css/app.css": "/css/app.css?id=7f1b93057ed062d57f83387c7689a3df",
+    "/css/antd.css": "/css/antd.css?id=04440a1f09cd4348b9440738173f3397"
 }
