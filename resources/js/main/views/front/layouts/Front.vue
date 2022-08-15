@@ -469,7 +469,7 @@ export default defineComponent({
 </style>
 
 <style>
-.ant-input-group > .ant-input:first-child, .ant-input-group-addon:first-child {
+.ant-col.ant-col-md-12.ant-col-lg-12.ant-col-xl-12 .ant-input-group > .ant-input:first-child, .ant-input-group-addon:first-child {
     background: transparent;
     outline: unset !important;
     border: unset;
@@ -477,32 +477,32 @@ export default defineComponent({
     color: #fff;
 }
 
-.ant-input-group > .ant-input::placeholder {
+.ant-col.ant-col-md-12.ant-col-lg-12.ant-col-xl-12 .ant-input-group > .ant-input::placeholder {
     color: #fff;
 }
 
-.ant-input-group-addon {
+.ant-col.ant-col-md-12.ant-col-lg-12.ant-col-xl-12 .ant-input-group-addon {
     background: transparent !important;
 }
 
-.ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button:not(.ant-btn-primary) {
+.ant-col.ant-col-md-12.ant-col-lg-12.ant-col-xl-12 .ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button:not(.ant-btn-primary) {
     background: transparent !important;
     border: unset !important;
     border-bottom: 3px solid #fff !important;
     color: #fff !important;
 }
 
-span.ant-select-selection-placeholder {
+.ant-col.ant-col-md-12.ant-col-lg-12.ant-col-xl-12 span.ant-select-selection-placeholder {
     color: #fff;
     display: none;
 }
 
-.ant-select-auto-complete.ant-select .ant-input:focus, .ant-select-auto-complete.ant-select .ant-input:hover {
+.ant-col.ant-col-md-12.ant-col-lg-12.ant-col-xl-12 .ant-select-auto-complete.ant-select .ant-input:focus, .ant-select-auto-complete.ant-select .ant-input:hover {
     box-shadow: unset!important;
     border-color: #fff;
 }
 
-.ant-select-item-option-content button.ant-btn {
+.ant-col.ant-col-md-12.ant-col-lg-12.ant-col-xl-12.ant-select-item-option-content button.ant-btn {
     width: 100% !important;
     max-width: 100% !important;
     background: transparent !important;
@@ -512,6 +512,6 @@ span.ant-select-selection-placeholder {
     padding: 0 !important;
 }
 
-.ant-select-item-option-content span {
+.ant-col.ant-col-md-12.ant-col-lg-12.ant-col-xl-12 .ant-select-item-option-content span {
     width: 100%;
 }</style>
