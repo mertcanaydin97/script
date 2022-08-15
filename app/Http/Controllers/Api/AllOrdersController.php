@@ -118,12 +118,12 @@ class AllOrdersController extends ApiBaseController
 				
 				
 					
-				$orderItems = OrderItem::select('*')->with('order','product')->where($where)->where('status', '1')->get();
+				$orderItems = OrderItem::select('*')->with('order','product')->where($where)->where('status', '0')->get();
 	
 							
 	}else{
 
-		$orderItems = OrderItem::select('*')->with('order','product')->where('status', '1')->get();
+		$orderItems = OrderItem::select('*')->with('order','product')->where('status', '0')->get();
 	}
 
 		
