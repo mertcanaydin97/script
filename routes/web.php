@@ -11,6 +11,7 @@ ApiRoute::group(['prefix' => 'front', 'namespace' => 'App\Http\Controllers\Api\F
     ApiRoute::get('app/{warehouse}', ['as' => 'api.front.app', 'uses' => 'HomePageController@app']);
     ApiRoute::get('homepage/{warehouse}', ['as' => 'api.front.homepage', 'uses' => 'HomePageController@homepage']);
     ApiRoute::post('categories', ['as' => 'api.front.categories', 'uses' => 'HomePageController@categories']);
+    ApiRoute::post('categories/childs/{slug}', ['as' => 'api.front.categories.childs', 'uses' => 'HomePageController@categorieschilds']);
     ApiRoute::post('category-by-slug/{slug}', ['as' => 'api.front.category-by-slug', 'uses' => 'HomePageController@categoryBySlug']);
 
     ApiRoute::post('login', ['as' => 'api.front.login', 'uses' => 'HomePageController@login']);
