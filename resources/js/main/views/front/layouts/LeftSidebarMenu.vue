@@ -13,7 +13,7 @@
 			<router-link  class="sinlge"
 				:to="{
 					name: 'front.categories',
-					params: { warehouse: frontWarehouse.slug, slug: 'ok' },
+					params: { warehouse: frontWarehouse.slug, slug: [category.slug] },
 				}"
 			>
 				<a-avatar :size="16" :src="category.image_url" />
