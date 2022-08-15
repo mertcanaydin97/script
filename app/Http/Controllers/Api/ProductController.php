@@ -336,8 +336,10 @@ class ProductController extends ApiBaseController
     public function frontSearch($slug, $type)
     {
 
-        $products = Product::with('category')->select('products.id', 'products.name', 'products.image', 'products.unit_id')
-        ->where(function ($query) use ($slug) {
+        $products = Product::with('category','customFields')->select('products.id', 'products.name', 'products.image', 'products.unit_id')
+        ->whereHas('customFields', function ($query) use ($slug) {
+            $query->where('field_value', 'LIKE', "%$slug%");
+        })->orWhere(function ($query) use ($slug) {
             $query->where('products.name', 'LIKE', "%$slug%")
                 ->orWhere('products.item_code', trim($slug));
         });
@@ -355,6 +357,7 @@ class ProductController extends ApiBaseController
 
                 $allProducs[] = [
                     'value'    =>  $product->name,
+                    'cstm'    =>  $product->customFields,
                     'id'    =>  $product->id,
                 ];
             }   
