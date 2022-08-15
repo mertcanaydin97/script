@@ -93,7 +93,7 @@ class AllOrdersController extends ApiBaseController
 		}
 	}
 	public function all(Request $request){
-			if ($request->get('filters')) {
+			if ($request->get('filters')) { 
 				$user_id = '';
 				$product_id = '';
 				$filters = explode(' and ', $request->get('filters'));
