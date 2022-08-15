@@ -3,7 +3,7 @@
 		<a-row type="flex" justify="center">
 			<a-col :span="20">
 				<a-row :gutter="[30, 30]" class="mt-30">
-					<a-col
+				<a-col
 						:xs="24"
 						:sm="24"
 						:md="24"
@@ -13,7 +13,7 @@
 					>
 					
 						
-				<div>
+						
 					<div style="text-align: center" class="mt-50 mb-40">
 						<a-typography-title :level="3" :style="{ marginBottom: '5px' }">
 							{{ $t("menu.categories") }}
@@ -27,48 +27,12 @@
 												{{ category.name }}
 						</a-typography-title>
 					</div>
-					<a-row :gutter="[10, 10]" class="mt-20 mb-50 featured-categories">
-						<a-col
-							:xs="24"
-							:sm="12"
-							:md="8"
-							:lg="4"
-							:xl="4"
-							v-for="featuredCategory in allCategories"
-							:key="featuredCategory.id"
-						>
-							<div
-								style="
-									padding: 0px 10px 0px 10px;
-									border-radius: 10px;
-									border: 1px solid #eee;
-								"
-							>
-								<a-list
-									item-layout="horizontal"
-									:data-source="[featuredCategory]"
-								>
-									<template #renderItem="{ item }">
-										<a-list-item>
-											<a-list-item-meta>
-												<template #title>
-													
-				<router-link :to="{ name: 'front.categories', params: {slug: item.slug} }">{{ item.name }}</router-link>
-												</template>
-												<template #avatar>
-													<a-avatar :src="item.image_url" />
-												</template>
-											</a-list-item-meta>
-										</a-list-item>
-									</template>
-								</a-list>
-							</div>
-						</a-col>
-					</a-row>
-					<a-divider dashed />
-				</div>
+						<LeftSidebarMenu
+							:catSelectedKeys="catSelectedKeys"
+							class="categories-page-lefbar"
+						/>
 					</a-col>
-					<a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+					<a-col :xs="24" :sm="24" :md="24" :lg="18" :xl="18">
 						<a-row class="mt-30 mb-30 category-page-container">
 							<a-col :span="24">
 								<a-page-header style="padding-left: 0px">
@@ -154,7 +118,7 @@
 			</a-col>
 		</a-row>
 	</div>
-</template> 
+</template>
 <script>
 import { defineComponent, ref, onMounted, watch, computed } from "vue";
 import { useRoute } from "vue-router";
@@ -173,32 +137,16 @@ export default defineComponent({
 		const totalRecords = ref(1);
 		const currentPage = ref(1);
 		const pageSize = ref(20);
-		const allCategories = ref([]);
 
 		onMounted(() => {
 			const params = route.params;
 			getData(params);
-			getCategories(params);
 		});
 
-		const getCategories = (params) => {
-			var url = "front/categories";
-			if (params && params.slug) {
-				url = "front/categories/childs/"+params.slug;
-			}
-			axiosFront.post(url).then((response) => {
-				const allCategoriesArray = [];
-				var listArray = response.data.categories;
-				
-				allCategories.value = response.data.categories;
-				
-			});
-		};
 		const getData = (params) => {
 			if (params && params.slug) {
 				const slugParamsArray = params.slug;
 				const categorySlug = slugParamsArray[slugParamsArray.length - 1];
-	console.table(params);
 				axiosFront
 					.post(`/front/category-by-slug/${params.slug}`)
 					.then((response) => {
@@ -251,7 +199,7 @@ export default defineComponent({
 			categoriesSelectedKeys,
 			categoriesOpenKeys,
 			products,
-allCategories,
+
 			currentPage,
 			pageSize,
 			totalRecords,

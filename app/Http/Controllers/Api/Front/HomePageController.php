@@ -191,12 +191,21 @@ class HomePageController extends ApiBaseController
 	public function categorieschilds(Request $request)
 	{
 		$slug = $request->slug;
-		$category = Category::select('id', 'name', 'slug')->where('slug', $slug)->first();
+		$category = Category::select('id','parent_id', 'name', 'slug')->where('slug', $slug)->first();
 		$categories = Category::where('parent_id', $category->id)->get();
 
+		if(count($categories) > 0){
+
+			return ApiResponse::make('Data Fetched', [
+				'categories' => $categories
+			]);
+	}else{
+		
+		$categoriess = Category::where('parent_id', $category->parent_id)->get();
 		return ApiResponse::make('Data Fetched', [
-			'categories' => $categories
+			'categories' => $categoriess
 		]);
+	}
 	}
 
 	public function categoryBySlug(Request $request)

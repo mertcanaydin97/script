@@ -6,9 +6,15 @@
 			</a>
 		</div>
 		<div class="product-bottom">
-			<div>
+			<div v-if="currentProduct.category && currentProduct.category.slug">
 				<router-link :to="{ name: 'front.categories', params: {slug: currentProduct.category.slug} }">
 				<span class="product-category">{{ currentProduct.category.name }}</span></router-link>
+				<h5 class="product-title">
+					{{ currentProduct.name }}
+				</h5>
+			</div>
+			<div v-else>
+				
 				<h5 class="product-title">
 					{{ currentProduct.name }}
 				</h5>

@@ -357,7 +357,6 @@ class ProductController extends ApiBaseController
 
                 $allProducs[] = [
                     'value'    =>  $product->name,
-                    'cstm'    =>  $product->customFields,
                     'id'    =>  $product->id,
                 ];
             }   
